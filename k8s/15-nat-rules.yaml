@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nse-ovs-nat-rules
+  namespace: nse-ovs-nat
+data:
+  rules.yaml: |
+    mode: static_port_map
+    virtual_ip: 172.16.5.10
+    virtual_port: 8080
+    backend_ip: 172.16.5.100
+    backend_port: 5201

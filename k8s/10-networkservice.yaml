@@ -1,0 +1,16 @@
+apiVersion: networkservicemesh.io/v1
+kind: NetworkService
+metadata:
+  name: nse-ovs-nat
+  namespace: nse-ovs-nat
+spec:
+  payload: ETHERNET
+  matches:
+    - source_selector:
+        app: nat
+      routes:
+        - destination_selector:
+            app: server
+    - routes:
+        - destination_selector:
+            app: nat
